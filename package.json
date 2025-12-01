@@ -11,5 +11,4 @@
   "engines": {
     "node": ">=18"
   }
-}
-// redeploy final 2025-12-01
+"description": "trigger final redeploy 2025-12-01" }
