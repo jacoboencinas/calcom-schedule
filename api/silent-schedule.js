@@ -23,6 +23,7 @@ export default async function silentScheduleHandler(req, res, apiKey) {
         timeZone: 'America/Mexico_City',
         language: 'es',
         metadata: {},
+        // SIN email, name, location en raíz (evita el error de legacy props)
         // responses: SOLO con los campos requeridos (name, email, notes)
         responses: {
             name: cleanName,
@@ -31,11 +32,10 @@ export default async function silentScheduleHandler(req, res, apiKey) {
         }
     };
 
-    // Usamos la ruta API de Cal.com
     const url = `https://api.cal.com/api/bookings?apiKey=${apiKey}`;
 
     try {
-        console.log('Payload enviado:', JSON.stringify(payload, null, 2));
+        console.log('Payload enviado:', JSON.stringify(payload, null, 2));  // Debug en consola
 
         const response = await fetch(url, {
             method: 'POST',
@@ -59,7 +59,7 @@ export default async function silentScheduleHandler(req, res, apiKey) {
             return res.status(response.status).json({ status: 'error', calcomError: data });
         }
     } catch (err) {
-        console.error('Error interno del servidor:', err);
+        console.error('Error:', err);
         return res.status(500).json({ status: 'error', message: err.message });
     }
 }
