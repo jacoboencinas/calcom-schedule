@@ -1,16 +1,15 @@
 {
-  "name": "calcom-schedule",
+  "name": "calcom-schedule-api",
   "version": "1.0.0",
-  "private": true,
+  "description": "Middleware para agendar citas en Cal.com desde Ultravox.",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "start": "node server.js"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
     "node-fetch": "^3.3.2"
   }
 }
