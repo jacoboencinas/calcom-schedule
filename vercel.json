@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "server.js",
+      "src": "api/silent-schedule.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/silent-schedule",
-      "dest": "/server.js"
+      "dest": "/api/silent-schedule.js"
     }
   ]
 }
