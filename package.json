@@ -1,0 +1,14 @@
+{
+  "name": "ultravox-calendly-silent",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node -r dotenv/config api/silent-schedule.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
