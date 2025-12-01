@@ -1,13 +1,24 @@
 {
-  "name": "ultravox-calcom-middleware",
+  "name": "calcom-schedule",
   "version": "1.0.0",
-  "main": "api/silent-schedule.js",
-  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
   "dependencies": {
-    "body-parser": "^2.2.1",
-    "date-fns": "^3.6.0",
-    "date-fns-tz": "^3.2.0",
-    "express": "^4.21.2",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "node-fetch": "^3.3.2"
+  },
+  "vercel": {
+    "functions": {
+      "api/**/*.js": {
+        "memory": 1024,
+        "maxDuration": 10
+      }
+    }
   }
 }
